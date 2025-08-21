@@ -1,1 +1,358 @@
-# MyObsession
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For Darina</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #000000 0%, #1a1a1a 50%, #000000 100%);
+            color: #ffffff;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            text-align: center;
+            position: relative;
+        }
+        
+        .header {
+            margin-bottom: 60px;
+            animation: fadeInUp 1.5s ease-out;
+        }
+        
+        .title {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            background: linear-gradient(45deg, #ffffff, #cccccc);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: 0 0 30px rgba(255,255,255,0.3);
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            color: #cccccc;
+            font-weight: 300;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+        
+        .letter-section {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 20px;
+            padding: 40px;
+            margin-bottom: 50px;
+            backdrop-filter: blur(10px);
+            animation: fadeInUp 2s ease-out 0.5s both;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+        }
+        
+        .letter-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #f0f0f0;
+            text-align: left;
+            margin-bottom: 30px;
+        }
+        
+        .letter-text p {
+            margin-bottom: 20px;
+        }
+        
+        .russian-translation {
+            font-size: 0.9rem !important;
+            color: #aaaaaa !important;
+            font-style: italic;
+            margin-bottom: 25px !important;
+            margin-top: 5px !important;
+            line-height: 1.5 !important;
+        }
+        
+        .signature {
+            text-align: right;
+            font-style: italic;
+            color: #cccccc;
+            font-size: 1.1rem;
+        }
+        
+        .reveal-button {
+            background: linear-gradient(45deg, #333333, #555555);
+            border: 2px solid #ffffff;
+            color: #ffffff;
+            padding: 20px 50px;
+            font-size: 1.2rem;
+            font-weight: 500;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.4s ease;
+            animation: pulse 2s infinite;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin: 30px 0;
+        }
+        
+        .reveal-button:hover {
+            background: linear-gradient(45deg, #555555, #777777);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(255,255,255,0.2);
+            animation: none;
+        }
+        
+        .video-container {
+            display: none;
+            margin-top: 50px;
+            animation: fadeInUp 1s ease-out;
+            position: relative;
+        }
+        
+        .video-frame {
+            position: relative;
+            width: 100%;
+            height: 0;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.5);
+        }
+        
+        .video-frame iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        
+        .video-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: #ffffff;
+            font-weight: 700;
+        }
+        
+        .decorative-line {
+            width: 100px;
+            height: 2px;
+            background: linear-gradient(45deg, #ffffff, #cccccc);
+            margin: 30px auto;
+            border-radius: 1px;
+        }
+        
+        .floating-particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+        
+        .particle {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background: rgba(255,255,255,0.6);
+            border-radius: 50%;
+            animation: float 6s infinite ease-in-out;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+                box-shadow: 0 0 20px rgba(255,255,255,0.3);
+            }
+            50% {
+                transform: scale(1.05);
+                box-shadow: 0 0 30px rgba(255,255,255,0.5);
+            }
+        }
+        
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0px) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 1;
+            }
+            90% {
+                opacity: 1;
+            }
+            50% {
+                transform: translateY(-100px) rotate(180deg);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .title {
+                font-size: 2.5rem;
+            }
+            
+            .container {
+                padding: 20px 15px;
+            }
+            
+            .letter-section {
+                padding: 25px;
+            }
+            
+            .reveal-button {
+                padding: 15px 35px;
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="floating-particles"></div>
+    
+    <div class="container">
+        <div class="header">
+            <h1 class="title">Darina</h1>
+            <p class="subtitle">This is goodbye</p>
+        </div>
+        
+        <div class="letter-section">
+            <div class="letter-text">
+                <p><strong>Darina,</strong></p>
+                <p class="russian-translation"><em>Дарина,</em></p>
+                
+                <p>This is goodbye.</p>
+                <p class="russian-translation"><em>Это прощание.</em></p>
+                
+                <p>Not to you, but to the confused man who lost you in February.</p>
+                <p class="russian-translation"><em>Не с тобой, а с растерянным мужчиной, который потерял тебя в феврале.</em></p>
+                
+                <p>That song you shared became my exorcism, and this clip is my funeral for him. Everything weak is buried in black and white footage, while the man you first loved emerges stronger, wiser, finally free.</p>
+                <p class="russian-translation"><em>Та песня, которой ты поделилась, стала моим изгнанием бесов, а этот клип — моими похоронами по нему. Всё слабое похоронено в чёрно-белых кадрах, пока мужчина, которого ты впервые полюбила, выходит сильнее, мудрее, наконец свободный.</em></p>
+                
+                <p>This is also a tribute to the kind part of you that died in our story - the part that gave everything while accepting crumbs. It haunts me that I let someone so pure lose pieces of herself trying to love me.</p>
+                <p class="russian-translation"><em>Это также дань доброй части тебя, которая умерла в нашей истории — части, которая отдавала всё, довольствуясь крошками. Меня преследует то, что я позволил кому-то такому чистому потерять части себя, пытаясь любить меня.</em></p>
+                
+                <p>But I see who you've become: the woman who emerged from her own fire, who transformed that pain into power. You became magnificent - not just in surviving, but in how you chose to engage with me afterward. Despite the grief I caused, you continued our conversation with a grace that revealed who you really are: someone who transforms pain into wisdom, not weapons.</p>
+                <p class="russian-translation"><em>Но я вижу, кем ты стала: женщиной, которая восстала из собственного огня, которая превратила эту боль в силу. Ты стала великолепной — не просто выжив, но в том, как ты решила общаться со мной после. Несмотря на горе, которое я причинил, ты продолжила наш разговор с грацией, которая открыла, кто ты на самом деле: тот, кто превращает боль в мудрость, а не в оружие.</em></p>
+                
+                <p>Six months apart, we both burned and rebuilt ourselves. Neither knowing the other was doing the same. Perfect timing for parallel transformations.</p>
+                <p class="russian-translation"><em>Шесть месяцев врозь, мы оба сгорели и отстроили себя заново. Не зная, что другой делает то же самое. Идеальное время для параллельных преобразований.</em></p>
+                
+                <p>What happens when two phoenixes decide to fly in the same direction?</p>
+                <p class="russian-translation"><em>Что происходит, когда два феникса решают лететь в одном направлении?</em></p>
+                
+                <p><em>Старая история закончилась.<br>
+                Новая книга.</em></p>
+                
+                <p><em>Разве мы не заплатили цену?</em></p>
+            </div>
+            
+            <div class="decorative-line"></div>
+            
+            <div class="signature">
+                Mathieu
+            </div>
+        </div>
+        
+        <button class="reveal-button" onclick="revealVideo()">
+            Reveal the Phoenix
+        </button>
+        
+        <div class="video-container" id="videoContainer">
+            <h2 class="video-title">God is a Weapon</h2>
+            <div class="decorative-line"></div>
+            <div class="video-frame">
+                <iframe 
+                    src="https://www.youtube.com/embed/a6sKQP-k630?autoplay=1&rel=0" 
+                    title="God is a Weapon - Personal Version"
+                    allowfullscreen>
+                </iframe>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // Create floating particles
+        function createParticles() {
+            const container = document.querySelector('.floating-particles');
+            const particleCount = 50;
+            
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.animationDelay = Math.random() * 6 + 's';
+                particle.style.animationDuration = (Math.random() * 3 + 4) + 's';
+                container.appendChild(particle);
+            }
+        }
+        
+        // Reveal video function
+        function revealVideo() {
+            const button = document.querySelector('.reveal-button');
+            const videoContainer = document.getElementById('videoContainer');
+            
+            button.style.transform = 'scale(0.95)';
+            button.style.opacity = '0.7';
+            
+            setTimeout(() => {
+                button.style.display = 'none';
+                videoContainer.style.display = 'block';
+                
+                // Smooth scroll to video
+                videoContainer.scrollIntoView({ 
+                    behavior: 'smooth',
+                    block: 'center'
+                });
+            }, 300);
+        }
+        
+        // Initialize particles when page loads
+        window.addEventListener('load', createParticles);
+        
+        // Add subtle mouse movement effects
+        document.addEventListener('mousemove', (e) => {
+            const particles = document.querySelectorAll('.particle');
+            const mouseX = e.clientX / window.innerWidth;
+            const mouseY = e.clientY / window.innerHeight;
+            
+            particles.forEach((particle, index) => {
+                const speed = (index % 3 + 1) * 0.5;
+                const x = (mouseX - 0.5) * speed;
+                const y = (mouseY - 0.5) * speed;
+                
+                particle.style.transform += ` translate(${x}px, ${y}px)`;
+            });
+        });
+    </script>
+</body>
+</html>
