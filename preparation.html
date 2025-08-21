@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For Darina - Preparation</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #000000 0%, #1a1a1a 50%, #000000 100%);
+            color: #ffffff;
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+        
+        .container {
+            max-width: 700px;
+            margin: 0 auto;
+            text-align: center;
+            animation: fadeInUp 1.5s ease-out;
+        }
+        
+        .title {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            background: linear-gradient(45deg, #ffffff, #cccccc);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: 0 0 30px rgba(255,255,255,0.3);
+        }
+        
+        .subtitle {
+            font-size: 1rem;
+            color: #cccccc;
+            font-weight: 300;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 50px;
+        }
+        
+        .main-section {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 25px;
+            padding: 50px;
+            backdrop-filter: blur(15px);
+            box-shadow: 0 25px 50px rgba(0,0,0,0.3);
+            margin-bottom: 40px;
+        }
+        
+        .intro-text {
+            font-size: 1.3rem;
+            line-height: 1.8;
+            color: #f0f0f0;
+            margin-bottom: 40px;
+            font-weight: 300;
+        }
+        
+        .requirements-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            color: #ffffff;
+            margin-bottom: 30px;
+            font-weight: 600;
+        }
+        
+        .step {
+            background: rgba(255,255,255,0.03);
+            border-left: 3px solid rgba(255,255,255,0.3);
+            padding: 25px;
+            margin: 20px 0;
+            border-radius: 0 15px 15px 0;
+            text-align: left;
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+        }
+        
+        .step-number {
+            background: linear-gradient(45deg, #333333, #555555);
+            color: #ffffff;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            font-size: 1.1rem;
+            flex-shrink: 0;
+        }
+        
+        .step-text {
+            flex: 1;
+            font-size: 1.1rem;
+            line-height: 1.6;
+            color: #e0e0e0;
+        }
+        
+        .telegram-highlight {
+            background: linear-gradient(45deg, #0088cc, #229ed9);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 500;
+        }
+        
+        .github-highlight {
+            color: #ffffff;
+            font-weight: 500;
+            background: rgba(255,255,255,0.1);
+            padding: 2px 8px;
+            border-radius: 4px;
+        }
+        
+        .final-instruction {
+            background: rgba(255,255,255,0.08);
+            border: 2px solid rgba(255,255,255,0.2);
+            border-radius: 20px;
+            padding: 30px;
+            margin-top: 40px;
+        }
+        
+        .final-text {
+            font-size: 1.2rem;
+            color: #ffffff;
+            line-height: 1.7;
+            margin-bottom: 20px;
+        }
+        
+        .emphasis {
+            font-style: italic;
+            color: #cccccc;
+            font-size: 1rem;
+        }
+        
+        .decorative-line {
+            width: 80px;
+            height: 2px;
+            background: linear-gradient(45deg, #ffffff, #cccccc);
+            margin: 30px auto;
+            border-radius: 1px;
+        }
+        
+        .floating-particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+        
+        .particle {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background: rgba(255,255,255,0.4);
+            border-radius: 50%;
+            animation: float 8s infinite ease-in-out;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0px) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 1;
+            }
+            90% {
+                opacity: 1;
+            }
+            50% {
+                transform: translateY(-120px) rotate(180deg);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .title {
+                font-size: 2.2rem;
+            }
+            
+            .main-section {
+                padding: 25px;
+                margin-bottom: 30px;
+            }
+            
+            .intro-text {
+                font-size: 1.05rem;
+                margin-bottom: 30px;
+            }
+            
+            .requirements-title {
+                font-size: 1.5rem;
+                margin-bottom: 25px;
+            }
+            
+            .step {
+                padding: 20px 15px;
+                margin: 15px 0;
+                gap: 15px;
+            }
+            
+            .step-number {
+                width: 35px;
+                height: 35px;
+                font-size: 1rem;
+            }
+            
+            .step-text {
+                font-size: 0.95rem;
+                line-height: 1.5;
+            }
+            
+            .final-instruction {
+                padding: 25px 20px;
+                margin-top: 30px;
+            }
+            
+            .final-text {
+                font-size: 1.1rem;
+                line-height: 1.6;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .container {
+                padding: 20px 15px;
+            }
+            
+            .title {
+                font-size: 1.8rem;
+                margin-bottom: 10px;
+            }
+            
+            .subtitle {
+                font-size: 0.9rem;
+                margin-bottom: 35px;
+            }
+            
+            .main-section {
+                padding: 20px;
+                border-radius: 20px;
+            }
+            
+            .intro-text {
+                font-size: 1rem;
+                line-height: 1.6;
+            }
+            
+            .requirements-title {
+                font-size: 1.3rem;
+                margin-bottom: 20px;
+            }
+            
+            .step {
+                padding: 15px 12px;
+                margin: 12px 0;
+                border-radius: 0 12px 12px 0;
+                gap: 12px;
+            }
+            
+            .step-number {
+                width: 32px;
+                height: 32px;
+                font-size: 0.95rem;
+            }
+            
+            .step-text {
+                font-size: 0.9rem;
+                line-height: 1.4;
+            }
+            
+            .telegram-highlight, .github-highlight {
+                font-size: 0.9rem;
+            }
+            
+            .final-instruction {
+                padding: 20px 15px;
+                border-radius: 15px;
+            }
+            
+            .final-text {
+                font-size: 1rem;
+                line-height: 1.5;
+                margin-bottom: 15px;
+            }
+            
+            .emphasis {
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="floating-particles"></div>
+    
+    <div class="container">
+        <h1 class="title">Darina</h1>
+        <p class="subtitle">This is preparation</p>
+        
+        <div class="main-section">
+            <p class="intro-text">
+                What you're about to experience deserves the perfect conditions. 
+                This moment has been carefully crafted and requires your full attention.
+            </p>
+            
+            <div class="decorative-line"></div>
+            
+            <h2 class="requirements-title">For the Optimal Experience</h2>
+            
+            <div class="step">
+                <span class="step-number">1</span>
+                <span class="step-text">
+                    <strong>Find your quiet space</strong><br>
+                    Choose a moment when you have privacy and won't be interrupted. This is personal.
+                </span>
+            </div>
+            
+            <div class="step">
+                <span class="step-number">2</span>
+                <span class="step-text">
+                    <strong>Open your MacBook</strong><br>
+                    The full experience requires a larger screen for proper appreciation.
+                </span>
+            </div>
+            
+            <div class="step">
+                <span class="step-number">3</span>
+                <span class="step-text">
+                    <strong>Connect to <span class="telegram-highlight">Telegram Web</span></strong><br>
+                    Navigate to <strong>https://web.telegram.org/</strong> and sign in to your account.
+                </span>
+            </div>
+            
+            <div class="step">
+                <span class="step-number">4</span>
+                <span class="step-text">
+                    <strong>Put on your best headphones</strong><br>
+                    Audio quality matters for what comes next. 🎧
+                </span>
+            </div>
+            
+            <div class="final-instruction">
+                <p class="final-text">
+                    Once everything is prepared, send me a message on Telegram.<br>
+                    I'll share the <span class="github-highlight">final link</span> with you.
+                </p>
+                
+                <div class="decorative-line" style="width: 60px;"></div>
+                
+                <p class="emphasis">
+                    Take your time. Some experiences are worth the preparation.
+                </p>
+            </div>
+        </div>
+        
+        <div style="margin-top: 40px; font-size: 1rem; color: #aaa; font-style: italic;">
+            Pour tes magnifiques yeux
+        </div>
+    </div>
+    
+    <script>
+        // Create floating particles
+        function createParticles() {
+            const container = document.querySelector('.floating-particles');
+            const particleCount = 40;
+            
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.animationDelay = Math.random() * 8 + 's';
+                particle.style.animationDuration = (Math.random() * 4 + 6) + 's';
+                container.appendChild(particle);
+            }
+        }
+        
+        // Initialize particles
+        window.addEventListener('load', createParticles);
+        
+        // Subtle mouse interaction
+        document.addEventListener('mousemove', (e) => {
+            const sections = document.querySelectorAll('.step');
+            const mouseX = e.clientX / window.innerWidth;
+            const mouseY = e.clientY / window.innerHeight;
+            
+            sections.forEach((section, index) => {
+                const speed = (index % 2 + 1) * 0.3;
+                const x = (mouseX - 0.5) * speed;
+                const y = (mouseY - 0.5) * speed;
+                
+                section.style.transform = `translate(${x}px, ${y}px)`;
+            });
+        });
+    </script>
+</body>
+</html>
